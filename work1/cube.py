@@ -93,13 +93,6 @@ def compute_transform(angle_x: ti.f32, angle_y: ti.f32):
         screen_coords[i][1] = (v_ndc[1] + 1.0) / 2.0
 
 def main():
-    # 边长为 2、中心在原点的立方体顶点（±1）
-    #      6 --- 7
-    #     /|    /|
-    #    4 --- 5 |
-    #    | 2 --| 3
-    #    |/    |/
-    #    0 --- 1
     cube_verts = [
         [-1, -1, -1],  # 0
         [ 1, -1, -1],  # 1

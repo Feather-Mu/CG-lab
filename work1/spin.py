@@ -179,7 +179,6 @@ def main():
     ]
 
     # ── 定义两个姿态（欧拉角，度）──────────────────────────
-    # 姿态 A：轻微倾斜，便于观察正面
     POSE_A = (20.0,  30.0,   0.0)   # (X轴, Y轴, Z轴)
     # 姿态 B：大幅旋转，呈现另一个面
     POSE_B = (50.0, 135.0,  45.0)
@@ -246,18 +245,6 @@ def main():
         # ── 绘制立方体 ───────────────────────────────────────
         for (i, j), color in zip(edges, edge_colors):
             gui.line(coords[i], coords[j], radius=2, color=color)
-
-        # ── HUD 文字 ─────────────────────────────────────────
-        state_str = "▶ 播放中" if playing else "⏸ 暂停"
-        dir_str   = "A→B" if forward else "B→A"
-        gui.text(f"姿态A (20°,30°,0°)",
-                 pos=(0.03, 0.01), font_size=14, color=0xFF6644)
-        gui.text(f"t = {t:.3f}   {dir_str}   {state_str}   速度={speed:.3f}",
-                 pos=(0.28, 0.01), font_size=14, color=0xCCCCCC)
-        gui.text(f"姿态B (50°,135°,45°)",
-                 pos=(0.72, 0.01), font_size=14, color=0x44FFAA)
-
-        gui.show()
 
 if __name__ == '__main__':
     main()
